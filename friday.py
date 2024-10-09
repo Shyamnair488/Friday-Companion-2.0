@@ -128,6 +128,8 @@ def start_stopwatch():
             break
         
 def take_number_command():
+    password_verified = takePassword()
+
     recognizer = sr.Recognizer()
 
     with sr.Microphone() as source:
