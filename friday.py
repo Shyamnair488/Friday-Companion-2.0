@@ -49,7 +49,7 @@ def takePassword():
         speak("Password please")
         print("Listening...")
         query = takeCommand()
-        if "Friday" == query:
+        if "Friday 2.0" == query:
             return True
         else:
             print("Incorrect Password")
