@@ -80,7 +80,7 @@ def handle_greeting(text):
     
 # get_weather section
 def get_weather(location):
-    api_key = "9505fe1bf737b20152fdd78ccc279b6a"                    #Get Your API Key and add over her and then run this section
+    api_key = "9505fe1bl737b20152fdd78ccc279b6a"                    #Get Your API Key and add over her and then run this section
     base_url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric"
     response = requests.get(base_url)
     weather_data = response.json()
@@ -97,35 +97,8 @@ def get_weather(location):
 
 def set_timer(seconds):
     print(f"Timer set for {seconds} seconds.")
-    speak(f"Timer set for {seconds} seconds.")
-    time.sleep(seconds)
-    print("Time's up!")
-    speak("Time's up!")
+    
 
-def set_alarm(alarm_time):
-    print(f"Alarm set for {alarm_time}.")
-    speak(f"Alarm set for {alarm_time}.")
-    music_file_path = r"C:/Users/shyam/Desktop/Projects/FRIDAY/alarm.mp3"
-    while True:
-        current_time = datetime.datetime.now().strftime("%H:%M")
-        if current_time == alarm_time:
-            print("Wake up! The alarm is ringing.")
-            speak("Wake up! The alarm is ringing.")
-            playsound(music_file_path)  # Beep sound for the alarm
-            break
-        time.sleep(30)  # Check every 30 seconds
-
-def start_stopwatch():
-    print("Stopwatch started. Say 'stop stopwatch' to stop.")
-    speak("Stopwatch started. Say 'stop stopwatch' to stop.")
-    start_time = time.time()
-    while True:
-        query = takeCommand().lower()
-        if "stop stopwatch" in query:
-            elapsed_time = time.time() - start_time
-            print(f"Stopwatch stopped. Elapsed time: {elapsed_time:.2f} seconds.")
-            speak(f"Stopwatch stopped. Elapsed time: {elapsed_time:.2f} seconds.")
-            break
         
 def take_number_command():
     password_verified = takePassword()
