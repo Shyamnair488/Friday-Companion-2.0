@@ -18,7 +18,7 @@ from playsound import playsound
 from textblob import TextBlob
 
 chatStr = ""
-sites = [["youtube", "https://www.youtube.com"], ["wikipedia", "https://www.wikipedia.com"], ["google", "https://www.google.com"],["chat gpt","https://chat.openai.com/"]]
+sites = [["youtube", "https://www.youtube1.com"],]
 
 def chat(query):
     global chatStr
