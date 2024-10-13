@@ -107,16 +107,7 @@ def take_number_command():
 
     with sr.Microphone() as source:
         print("Please say a number:")
-        recognizer.adjust_for_ambient_noise(source)  # Adjusts for ambient noise
-        audio = recognizer.listen(source)
-
-    try:
-        number = recognizer.recognize_google(audio)
-        return number
-    except sr.UnknownValueError:
-        return "Sorry, I couldn't understand the number."
-    except sr.RequestError:
-        return "Sorry, I couldn't request results. Please check your internet connection."
+        
 
 def takeCommand(language="en"):
     r = sr.Recognizer()
@@ -143,16 +134,7 @@ def calculate(num1,num2,operation):
 
     if operation == "add":
                     result = num1 + num2
-    elif operation == "subtract":
-                    result = num1 - num2
-    elif operation == "multiply":
-                    result = num1 * num2
-    elif operation == "divide":
-        if num2 == 0:
-                        speak("Cannot divide by zero")
-        else:
-                        result = num1 / num2
-
+    
     if result is not None:
             speak(f"The result of {operation}ing {num1} and {num2} is {result}")
                             
@@ -195,13 +177,7 @@ def open_file_1(folder_name):
         return None
     
 def detect_mood(text):
-    analysis = TextBlob(text)
-    if analysis.sentiment.polarity > 0:
-        return "You seem to be in a good mood!"
-    elif analysis.sentiment.polarity < 0:
-        return "You seem to be in a bad mood. Is there anything I can do to help?"
-    else:
-        return "You seem to be in a neutral mood."
+    analysis = TextBlob(text)
 #---------------------------------------------------
 
 if __name__ == '__main__':
